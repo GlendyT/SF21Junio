@@ -1,3 +1,4 @@
+import Footer from "./footer/page";
 import Inicio from "./inicio/page";
 import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";
@@ -11,12 +12,29 @@ export default function Home() {
       className=" min-h-screen flex flex-col  items-center justify-center text-4xl font-bold text-white
 "
     >
-      <Inicio />
-      <Patrocinadores />
-      <Nosotras />
-      <Participantes />
-      <Musicos />
-      <Ruta />
+      <section id="/" className="w-full">
+        <Inicio />
+      </section>
+      <section id="patrocinadores" className="w-full">
+        <Patrocinadores />
+      </section>
+
+      <section id="nosotras" className="w-full">
+        <Nosotras />
+      </section>
+      <section id="participantes" className="w-full">
+        {" "}
+        <Participantes />
+      </section>
+      <section id="musicos" className="w-full">
+        <Musicos />
+      </section>
+      <section id="ruta" className="w-full">
+        <Ruta />
+      </section>
+      <section id="footer" className="w-full">
+        <Footer />
+      </section>
     </main>
   );
 }

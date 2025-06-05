@@ -1,3 +1,4 @@
+import Footer from "./footer/page";
 import Inicio from "./inicio/page";
 import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="ruta" className="w-full">
         <Ruta />
+      </section>
+      <section id="footer" className="w-full">
+        <Footer />
       </section>
     </main>
   );

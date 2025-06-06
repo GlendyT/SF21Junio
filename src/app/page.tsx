@@ -1,4 +1,4 @@
-import Footer from "./footer/page";
+import Footer from "@/utils/Footer";
 import Inicio from "./inicio/page";
 import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";

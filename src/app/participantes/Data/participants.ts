@@ -1,7 +1,7 @@
 export const participants = [
   {
     id: 1,
-    name: "Chumilkaj",
+    name: "Name1",
     image: "/main logo.webp",
   },
 ];

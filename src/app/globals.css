@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.sfGreen {
+  color: #00624f;
+}
 .sfGreen8 {
   color: #1d4116;
 }
@@ -176,7 +179,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border  outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

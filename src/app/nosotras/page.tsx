@@ -4,7 +4,6 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ControlledAccordions() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -15,10 +14,15 @@ export default function ControlledAccordions() {
     };
 
   return (
-    <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+    <div className=" text-white p-3 min-h-screen bg-gradient-to-b from-[#1bb092] to-[#9a430a] via-[#da6c13]">
+      <h1 className='p-5 text-black text-3xl font-medium'>  Sobre Sociedad Femenina 21 de Junio, Comalapa</h1> 
+      <Accordion sx={{background: 'transparent'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+           expandIcon={
+             expanded === 'panel1'
+            ? <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>−</span>
+            : <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>+</span>
+           }
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
@@ -29,16 +33,22 @@ export default function ControlledAccordions() {
             I am an accordion
           </Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails >
           <Typography>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+
+
+      <Accordion sx={{background: 'transparent'}} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+             expandIcon={
+             expanded === 'panel2'
+            ? <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>−</span>
+            : <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>+</span>
+           }
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
@@ -57,9 +67,14 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+
+      <Accordion sx={{background: 'transparent'}}  expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+             expandIcon={
+             expanded === 'panel3'
+            ? <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>−</span>
+            : <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>+</span>
+           }
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
@@ -77,9 +92,14 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+
+      <Accordion sx={{background: 'transparent'}}  expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+             expandIcon={
+             expanded === 'panel4'
+            ? <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>−</span>
+            : <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>+</span>
+           }
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
@@ -94,6 +114,7 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+     
     </div>
   );
 }

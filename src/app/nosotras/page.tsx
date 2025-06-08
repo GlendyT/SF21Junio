@@ -4,8 +4,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { about } from "./Data/aboutus";
+import Image from "next/image";
 
 export default function Nosotras() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -20,13 +20,21 @@ export default function Nosotras() {
       className="flex flex-col items-center justify-center  min-h-screen bg-gradient-to-b from-[#1bb092] via-[#da6c13] to-[#9a430a] to-99% "
       id="nosotras"
     >
-      <h2 className=" p-3 text-center text-[#1d4116]"> Sobre Sociedad Femenina 21 de Junio, Comalapa</h2>
+     <div className="flex flex-row px-35 items-center gap-5">
+       <h1 className='text-black font-normal'>Sobre Sociedad Femenina 21 de Junio, Comalapa </h1>
+       <Image
+          src='/logo.webp'
+          alt='logo'
+          width={120}
+          height={120}
+       />
+     </div>
      
       <div className="w-full">
         {about.map((sobrenosotras) => (
-          <div key={sobrenosotras.id} className="flex flex-col p-2 ">
+          <div key={sobrenosotras.id} className="flex flex-col p-2 px-3">
             <Accordion
-              sx={{background: 'transparent'}}
+              sx={{background: 'transparent', boxShadow: 'none', px: '8rem'}}
               expanded={expanded === String(sobrenosotras.id)}
               onChange={handleChange(String(sobrenosotras.id))}
             >
@@ -38,6 +46,10 @@ export default function Nosotras() {
                 }
                 aria-controls={`${sobrenosotras.id}-content`}
                 id={`${sobrenosotras.id}-header`}
+                sx={{
+                  borderBottom: '2px solid black',
+                  py: '1px'
+                 }}
               >
                 <Typography
                   component="span"

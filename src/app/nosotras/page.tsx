@@ -20,36 +20,49 @@ export default function Nosotras() {
       className="flex flex-col items-center justify-center  min-h-screen bg-gradient-to-b from-[#1bb092] via-[#da6c13] to-[#9a430a] to-99% "
       id="nosotras"
     >
-     <div className="flex flex-row px-35 items-center gap-5">
-       <h1 className='text-black font-normal'>Sobre Sociedad Femenina 21 de Junio, Comalapa </h1>
-       <Image
-          src='/logo.webp'
-          alt='logo'
-          width={120}
-          height={120}
-       />
-     </div>
-     
-      <div className="w-full">
+      <div className="w-full px-13 sm:px-8 md:px-[8rem]">
+        <div className="flex items-center justify-between gap-5 overflow-x-auto">
+          <h1 className="text-black font-normal text-lg sm:text-xl md:text-2xl">
+            Sobre Sociedad Femenina 21 de Junio, Comalapa
+          </h1>
+          <Image
+            src="/logo.webp"
+            alt="logo"
+            width={100}
+            height={100}
+          />
+        </div>
+      </div>
+
+      <div className="w-full px-13 sm:px-8 md:px-[8rem]">
         {about.map((sobrenosotras) => (
-          <div key={sobrenosotras.id} className="flex flex-col p-2 px-3">
+          <div key={sobrenosotras.id} className="flex flex-col p-0.5 px-3">
             <Accordion
-              sx={{background: 'transparent', boxShadow: 'none', px: '8rem'}}
+              sx={{
+                background: "transparent",
+                boxShadow: "none",
+              }}
               expanded={expanded === String(sobrenosotras.id)}
               onChange={handleChange(String(sobrenosotras.id))}
             >
               <AccordionSummary
-               expandIcon={
-                  expanded === String(sobrenosotras.id)
-                 ? <span style={{ fontSize: '3rem', fontWeight: 'bold' }}>-</span>
-                 : <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>+</span>
+                expandIcon={
+                  expanded === String(sobrenosotras.id) ? (
+                    <span style={{ fontSize: "3rem", fontWeight: "bold" }}>
+                      -
+                    </span>
+                  ) : (
+                    <span style={{ fontSize: "2rem", fontWeight: "bold" }}>
+                      +
+                    </span>
+                  )
                 }
                 aria-controls={`${sobrenosotras.id}-content`}
                 id={`${sobrenosotras.id}-header`}
                 sx={{
-                  borderBottom: '2px solid black',
-                  py: '1px'
-                 }}
+                  borderBottom: "2px solid black",
+                  py: "1px",
+                }}
               >
                 <Typography
                   component="span"

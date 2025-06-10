@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { about } from "./Data/aboutus";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+
 
 export default function Nosotras() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -56,6 +56,7 @@ export default function Nosotras() {
                   borderBottom: "2px solid #1d4116",
                   py: "0px",
                 }}
+
               >
                 <Typography
                   component="span"

@@ -29,7 +29,7 @@ const Navbar = () => {
     <div
       className={`flex flex-row fixed justify-between px-4  py-1 w-full  transition-all duration-300  gap-4 max-sm:gap-1 text-black dark:text-white max-sm:py-2 items-center z-10   ${
         isScrolled
-          ? "bg-black/20 dark:bg-white/0 backdrop-blur-3xl shadow-lg"
+          ? "bg-[#0d9381]/40 dark:bg-white/0 backdrop-blur-3xl shadow-2xl"
           : ""
       }`}
     >

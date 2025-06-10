@@ -5,11 +5,11 @@ import Image from "next/image";
 const Patrocinadores = () => {
   return (
     <section
-      className="flex flex-col  items-center justify-center  min-h-screen bg-gradient-to-b from-[#9a430a] via-[#da6c13] to-[#1bb092] to-99% "
+      className="flex flex-col  items-center justify-center  min-h-screen  "
       id="patrocinadores"
     >
       <h1 className="text-center text-[#1d4116]">Patrocinadores</h1>
-      <div className="flex flex-wrap items-center justify-center gap-2 py-2">
+      <div className="flex flex-wrap items-center justify-center gap-2 py-2 px-14">
         {sponsors.map((sponsor) => (
           <div key={sponsor.id}>
             <Image

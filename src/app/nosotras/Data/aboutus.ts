@@ -36,3 +36,4 @@ export const about = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptates accusamus amet quod iusto ut voluptatem qui dolores repudiandae deserunt. Labore accusamus fuga deserunt distinctio non asperiores, recusandae qui nostrum! ",
   },
 ];
+

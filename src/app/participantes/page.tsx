@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Participantes = () => {
   return (
-    <section className="flex items-center justify-center min-h-screen  bg-gradient-to-b from-[#9a430a] via-[#da6c13] to-[#1bb092] to-99% ">
+    <section className="flex items-center justify-center min-h-screen  ">
       <div>
         {participants.map((solos) => (
           <div

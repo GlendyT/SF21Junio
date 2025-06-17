@@ -6,7 +6,7 @@ import { FacebookIcon, InsagramIcon, TikTokIcon } from "./Icons";
 
 const Footer = () => {
   return (
-    <section className="flex flex-row justify-between items-center w-full px-4 bg-[#00624F]">
+    <footer className="flex flex-row justify-between items-center w-full px-4 bg-[#027e66]">
       <Link href="/">
         <Image src="/logo.webp" alt="logo21june" width={50} height={50} />
       </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
 
         </Link>
       </div>
-    </section>
+    </footer>
   );
 };
 

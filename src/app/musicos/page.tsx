@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Musicos = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#1bb092] via-[#da6c13] to-[#9a430a] to-99% px-44">
+    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99% px-44">
       <div className="flex flex-row max-sm:flex max-sm:flex-wrap px-4  gap-2 items-center justify-center">
         {musicians.map((musicos) => (
           <div key={musicos.id} className=" flex flex-col justify-center items-center text-center gap-2">

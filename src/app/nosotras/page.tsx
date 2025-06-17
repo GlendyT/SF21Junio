@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import { about } from "./Data/aboutus";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+
 
 
 export default function Nosotras() {
@@ -19,7 +21,7 @@ export default function Nosotras() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center  min-h-screen bg-gradient-to-b from-[#1bb092] via-[#da6c13] to-[#9a430a] to-99% "
+      className="flex flex-col items-center justify-center  min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99% "
       id="nosotras"
     >
       <div className="w-full px-14 sm:px-8 md:px-[8rem]">

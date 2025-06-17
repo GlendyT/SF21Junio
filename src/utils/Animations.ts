@@ -1,16 +1,12 @@
 import gsap from "gsap";
 
-type AnimateTypes = {
-  target: string;
-  animationProps
-  scrollProps
-};
+gsap.registerPlugin(ScrollTrigger);
 
 export const animateWithGsap = (
-  target,
-  animationProps,
-  scrollProps
-): AnimateTypes => {
+  target: string | Element | Element[] | NodeListOf<Element>,
+  animationProps: Omit<gsap.TweenVars, "scrollTrigger">,
+  scrollProps?: Partial<ScrollTrigger.Vars>
+): void => {
   gsap.to(target, {
     ...animationProps,
     scrollTrigger: {
@@ -22,34 +18,10 @@ export const animateWithGsap = (
   });
 };
 
-// export const animateWithGsapTimeline = (
-//   timeline,
-//   rotationRef,
-//   rotationState,
-//   firstTarget,
-//   secondTarget,
-//   animationProps
-// ) => {
-//   timeline.to(rotationRef.current.roation, {
-//     y: rotationState,
-//     duration: 1,
-//     ease: "power2.inOut",
-//   });
-
-//   timeline.to(
-//     firstTarget,
-//     {
-//       ...animationProps,
-//       ease: "power2.inOut",
-//     },
-//     "<"
-//   );
-//   timeline.to(
-//     secondTarget,
-//     {
-//       ...animationProps,
-//       ease: "power2.inOut",
-//     },
-//     "<"
-//   );
-// };
+export const animationScroll = () => {
+  gsap.timeline({
+    scrollTrigger: {
+      scrub: 1,
+    },
+  });
+};

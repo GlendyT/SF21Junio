@@ -9,8 +9,6 @@ import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-
-
 export default function Nosotras() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
@@ -21,10 +19,10 @@ export default function Nosotras() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center  min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99% "
+      className="flex flex-col items-center justify-center px-8  min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99% "
       id="nosotras"
     >
-      <div className="w-full px-14 sm:px-8 md:px-[8rem]">
+      <div className="w-full px-8 ">
         <div className="flex items-center justify-between gap-5 overflow-x-auto px-4">
           <h1 className="text-black font-normal text-4xl w-96 max-sm:text-xs">
             Sobre Sociedad Femenina 21 de Junio, Comalapa
@@ -33,13 +31,12 @@ export default function Nosotras() {
         </div>
       </div>
 
-      <div className="w-full px-14 sm:px-8 md:px-[8rem]">
+      <div className="flex flex-row flex-wrap px-8">
         {about.map((sobrenosotras) => (
-          <div key={sobrenosotras.id} className="flex flex-col p-0.5">
+          <div key={sobrenosotras.id} className="w-1/2 px-2 p-0.5">
             <Accordion
               sx={{
                 background: "transparent",
-                //boxShadow: "none",
               }}
               expanded={expanded === String(sobrenosotras.id)}
               onChange={handleChange(String(sobrenosotras.id))}
@@ -58,7 +55,6 @@ export default function Nosotras() {
                   borderBottom: "2px solid #1d4116",
                   py: "0px",
                 }}
-
               >
                 <Typography
                   component="span"

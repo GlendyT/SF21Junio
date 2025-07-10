@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
-import { FacebookIcon, InsagramIcon, TikTokIcon } from "./Icons";
 
 const Footer = () => {
   return (
@@ -17,26 +17,22 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InsagramIcon />
-
+          <FaInstagram className="w-7 h-7" />
+        
         </Link>
         <Link
           href="https://www.facebook.com/profile.php?id=61572086262216"
           target="_blank"
           rel="noopener noreferrer"
         >
-
-          <FacebookIcon />
-
+          <FaFacebook className="w-7 h-7"  />
         </Link>
         <Link
           href="https://www.tiktok.com/@sociedad.femenina?lang=en"
           target="_blank"
           rel="noopener noreferrer"
         >
-
-          <TikTokIcon />
-
+          <FaTiktok className="w-7 h-7"  />
         </Link>
       </div>
     </footer>

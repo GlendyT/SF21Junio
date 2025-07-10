@@ -4,7 +4,6 @@ import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";
 import Participantes from "./participantes/page";
 import Patrocinadores from "./patrocinadores/page";
-import Ruta from "./ruta/page";
 
 export default function Home() {
   return (
@@ -28,9 +27,6 @@ export default function Home() {
       </section>
       <section id="musicos" className="w-full">
         <Musicos />
-      </section>
-      <section id="ruta" className="w-full">
-        <Ruta />
       </section>
       <section id="footer" className="w-full">
         <Footer />

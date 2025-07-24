@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+body {
+  overflow-x: hidden;
+}
+
+
 .sfGreen {
   color: #00624f;
 }
@@ -183,5 +189,23 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.marqueeanimation {
+  animation: marquee 60s linear infinite;
+}
+
+.gradient-edge {
+  @apply absolute
+}
+
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
   }
 }

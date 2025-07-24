@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Participantes = () => {
   return (
-    <section className="flex items-center justify-center min-h-screen  ">
+    <section id="participantes" className="flex items-center justify-center min-h-screen  ">
       <div>
         {participants.map((solos) => (
           <div

@@ -1,6 +1,6 @@
 "use client";
 import { useGSAP } from "@gsap/react";
-import gsap, { SplitText } from "gsap/all";
+import gsap, {SplitText} from "gsap/all";
 import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";

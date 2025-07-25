@@ -192,6 +192,14 @@ body {
   }
 }
 
+@utility masked-img {
+    mask-image: url("/logo.webp");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 50%;
+}
+
+
 .marqueeanimation {
   animation: marquee 60s linear infinite;
 }

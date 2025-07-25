@@ -17,28 +17,43 @@ const Inicio = () => {
           transformOrigin: "center center",
         });
         const tl = gsap.timeline({
-          delay: 1,
-          onStart: () => console.log("Timeline iniciado"),
-          onComplete: () => console.log("Animaciones completadas"),
+          delay: 0.01,
         });
         tl.to(heroBg, {
           scale: 1.3,
           opacity: 1,
-          duration: 3,
+          duration: 2.5,
           ease: "back.out(1.7)",
-          onStart: () => console.log("Animando hero-bg"),
-          onComplete: () => console.log("hero-bg completado"),
         });
       }
     };
     const timeoutId = setTimeout(animateElements, 500);
 
     return () => clearTimeout(timeoutId);
-  }, []);
+  });
 
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-title h1",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+  });
   return (
-    <section className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%">
-      <div className="flex flex-row w-full items-center justify-center gap-2">
+    <section
+      id="hero"
+      className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
+    >
+      <div className="flex flex-row w-full items-center justify-center gap-6">
         <div
           id="hero-key"
           className="flex items-center justify-center relative"
@@ -60,11 +75,9 @@ const Inicio = () => {
             className="relative z-20"
           />
         </div>
-        <div className="flex w-1/2 items-center justify-center px-8">
-          <h1 className="flex flex-col items-start text-4xl">
-            Sociedad Femenina
-            <span className="text-[#1d4116] text-8xl"> 21 de Junio</span>
-          </h1>
+        <div className="flex flex-col w-1/2 items-start justify-center px-8 hero-title">
+          <h1 className="text-5xl font-semibold">Sociedad Femenina</h1>
+          <h1 className="text-[#1d4116] text-8xl font-extrabold"> 21 de Junio</h1>
         </div>
       </div>
     </section>

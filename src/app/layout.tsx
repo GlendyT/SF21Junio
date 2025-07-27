@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Sociedad Femenina  21 de Junio",
   description: "Sociedad Femenina 21 de Junio",
   icons: {
-    icon: "/logo.webp",
+    icon: "/logo2.png",
   },
 };
 

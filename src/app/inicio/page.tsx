@@ -3,53 +3,140 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Inicio = () => {
-  useGSAP(() => {
-    const animateElements = () => {
-      const heroBg = document.getElementById("hero-bg");
-      if (heroBg) {
-        gsap.set([heroBg], {
-          scale: 0,
-          opacity: 0,
-          transformOrigin: "center center",
-        });
-        const tl = gsap.timeline({
-          delay: 0.01,
-        });
-        tl.to(heroBg, {
-          scale: 1.3,
-          opacity: 1,
-          duration: 2.5,
-          ease: "back.out(1.7)",
-        });
-      }
-    };
-    const timeoutId = setTimeout(animateElements, 500);
-
-    return () => clearTimeout(timeoutId);
-  });
+  const heroBgRef = useRef<HTMLImageElement>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const heroTitleRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      ".hero-title h1",
-      {
+    if (heroBgRef.current && heroSectionRef.current) {
+      // Set initial state
+      gsap.set(heroBgRef.current, {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "center center",
+      });
+
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: heroSectionRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          gsap.to(heroBgRef.current, {
+            scale: 1.3,
+            opacity: 1,
+            duration: 2.5,
+            ease: "back.out(1.7)",
+          });
+        },
+        onLeave: () => {
+          gsap.to(heroBgRef.current, {
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(heroBgRef.current, {
+            scale: 1.3,
+            opacity: 1,
+            duration: 2.5,
+            ease: "back.out(1.7)",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(heroBgRef.current, {
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        },
+      });
+    }
+  }, []);
+
+  useGSAP(() => {
+    if (heroTitleRef.current) {
+      // Set initial state for titles
+      gsap.set(".hero-title h1", {
         y: 50,
         opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power2.inOut",
-      }
-    );
-  });
+      });
+
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: heroTitleRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          gsap.to(".hero-title h1", {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        },
+        onLeave: () => {
+          gsap.to(".hero-title h1", {
+            y: -50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power2.inOut",
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(".hero-title h1", {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(".hero-title h1", {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power2.inOut",
+          });
+        },
+      });
+    }
+  }, []);
+
+  // Smooth scroll animation on scroll
+  useGSAP(() => {
+    if (heroSectionRef.current) {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: heroSectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.2,
+        }
+      })
+      .to(heroSectionRef.current, {
+        y: -50,
+        opacity: 0.8,
+        ease: "power2.out",
+      });
+    }
+  }, []);
+
   return (
     <section
+      ref={heroSectionRef}
       id="hero"
       className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
     >
@@ -59,7 +146,7 @@ const Inicio = () => {
           className="flex items-center justify-center relative"
         >
           <Image
-            id="hero-bg"
+            ref={heroBgRef}
             src="/bglogo.webp"
             width={950}
             height={950}
@@ -75,7 +162,7 @@ const Inicio = () => {
             className="relative z-20"
           />
         </div>
-        <div className="flex flex-col w-1/2 items-start justify-center px-8 hero-title">
+        <div ref={heroTitleRef} className="flex flex-col w-1/2 items-start justify-center px-8 hero-title">
           <h1 className="text-5xl font-semibold">Sociedad Femenina</h1>
           <h1 className="text-[#1d4116] text-8xl font-extrabold"> 21 de Junio</h1>
         </div>

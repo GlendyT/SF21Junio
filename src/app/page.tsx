@@ -4,8 +4,7 @@ import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";
 import Participantes from "./participantes/page";
 import Patrocinadores from "./patrocinadores/page";
-import Arte from "./Arte/page";
-
+import Memorias from "./Memorias/page";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <Inicio />
       <Patrocinadores />
       <Nosotras />
-      <Arte/>
+      <Memorias />
       <Participantes />
       <Musicos />
       <Footer />

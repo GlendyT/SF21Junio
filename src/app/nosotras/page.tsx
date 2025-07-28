@@ -76,7 +76,7 @@ export default function Nosotras() {
               Femenina 21 de Junio, Comalapa
             </h1>
           </div>
-          <Image src="/logo.webp" alt="logo" width={90} height={90} />
+          <Image src="/logo2.png" alt="logo" width={90} height={90} />
         </div>
       </div>
 

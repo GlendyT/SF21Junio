@@ -10,7 +10,7 @@ const Footer = () => {
       className="flex flex-row justify-between items-center w-full px-4 bg-[#027e66]"
     >
       <Link href="/">
-        <Image src="/logo.webp" alt="logo21june" width={50} height={50} />
+        <Image src="/logo2.png" alt="logo21june" width={50} height={50} />
       </Link>
       <div className="gap-2 flex flex-row items-center justify-center font-extrabold text-[#181d1d] max-sm:text-xs uppercase text-2xl">
         <Link

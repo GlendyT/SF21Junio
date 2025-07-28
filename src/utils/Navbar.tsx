@@ -35,7 +35,7 @@ const Navbar = () => {
       }`}
     >
       <Link href="/">
-        <Image src="/logo.webp" alt="logo21june" width={50} height={50} />
+        <Image src="/logo2.png" alt="logo21june" width={50} height={50} />
       </Link>
       <nav className="gap-2 flex flex-row items-center font-extrabold text-[#1d4116] max-sm:hidden uppercas text-md">
         {navLinks.map((navs) => (

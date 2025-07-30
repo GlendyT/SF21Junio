@@ -11,23 +11,24 @@ export default function Historia() {
     >
       <div>
         <h2 className="text-4xl font-extrabold text-center text-[#0c2601]">
-          History
+          Historia
         </h2>
-        <div className="flex flex-row max-sm:flex max-sm:flex-wrap px-4 py-2  items-center justify-center top-grid">
+
+        <div className="flex flex-row max-sm:flex max-sm:flex-wrap px-4 py-2 items-center justify-center ">
           {information.map((info) => (
             <div
               key={info.id}
-              className="grid grid-cols-2 grid-rows-2 py-2 gap-4"
+              className="grid grid-cols-2 md:grid-cols-2 gap-4"
             >
-              {info.description}
-              <h2 className="text-orange-400 font-bold text-2xl">
-                Sociedad Fememina 21 de Junio
-              </h2>
+              <h1 className="text-orange-4 text-sm sm:text-2xl rounded-2xl md:text-3xl w-full p-6 bg-gradient-to-b from-[#a1e7d9]/100 to-[#9a430a]/60 to-99%">
+                {" "}
+                {info.description}{" "}
+              </h1>
 
               <Image
                 src={info.image}
                 alt="image"
-                className="col-start-2 row-start-2"
+                className="col-start-2 row-start-2 rounded-2xl"
                 width={600}
                 height={600}
               />

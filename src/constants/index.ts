@@ -4,12 +4,12 @@ export const navLinks: NavLinksTypes[] = [
   {
     id: 1,
     name: "Inicio",
-    href: "#hero",
+    href: "#inicio",
   },
   {
     id: 2,
-    name :"History",
-    href :"#history",
+    name :"Historia",
+    href :"#historia",
   },
    {
     id: 3,
@@ -18,8 +18,8 @@ export const navLinks: NavLinksTypes[] = [
   },
   {
     id: 4,
-    name: "Memorias",
-    href: "#memorias",
+    name: "Album",
+    href: "#album",
   },
   {
     id: 5,

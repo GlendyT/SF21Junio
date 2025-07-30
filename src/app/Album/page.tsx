@@ -7,7 +7,7 @@ import { Flip } from "gsap/Flip";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-const Memorias = () => {
+const Album = () => {
   const GalleryRef = useRef(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
 
@@ -128,4 +128,4 @@ const Memorias = () => {
   );
 };
 
-export default Memorias;
+export default Album;

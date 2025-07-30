@@ -4,17 +4,17 @@ import Musicos from "./musicos/page";
 import Nosotras from "./nosotras/page";
 import Participantes from "./participantes/page";
 import Patrocinadores from "./patrocinadores/page";
-import Memorias from "./Memorias/page";
-import History from "./History/page";
+import Historia from "./Historia/page";
+import Album from "./Album/page";
 
 export default function Home() {
   return (
     <>
       <Inicio />
-      <History/>
       <Patrocinadores />
+      <Historia />
       <Nosotras />
-      <Memorias />
+      <Album />
       <Participantes />
       <Musicos />
       <Footer />

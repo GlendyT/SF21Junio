@@ -8,21 +8,26 @@ export const navLinks: NavLinksTypes[] = [
   },
   {
     id: 2,
+    name :"History",
+    href :"#history",
+  },
+   {
+    id: 3,
     name: "Nosotras",
     href: "#nosotras",
   },
   {
-    id: 3,
+    id: 4,
     name: "Memorias",
     href: "#memorias",
   },
   {
-    id: 4,
+    id: 5,
     name: "Participantes",
     href: "#participantes",
   },
   {
-    id: 5,
+    id: 6,
     name: "Musicos",
     href: "#musicos",
   },

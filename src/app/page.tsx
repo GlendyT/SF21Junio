@@ -13,8 +13,8 @@ export default function Home() {
       <Inicio />
       <Patrocinadores />
       <Historia />
-      <Nosotras />
-      <Album />
+       <Nosotras /> 
+       <Album /> 
       <Participantes />
       <Musicos />
       <Footer />

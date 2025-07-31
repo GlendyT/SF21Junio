@@ -66,7 +66,7 @@ const Album = () => {
     <section
       ref={GalleryRef}
       className="w-full h-[300vh] relative  "
-      id="memorias"
+      id="album"
     >
       <div className="sticky top-0 flex flex-col items-center justify-center w-full h-screen ">
         <div className="origin-wrapper absolute w-[48%] border-green-500">

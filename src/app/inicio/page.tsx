@@ -115,33 +115,13 @@ const Inicio = () => {
     }
   }, []);
 
-  // Smooth scroll animation on scroll
-  useGSAP(() => {
-    if (heroSectionRef.current) {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: heroSectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.2,
-          },
-        })
-        .to(heroSectionRef.current, {
-          y: -50,
-          opacity: 0.8,
-          ease: "power2.out",
-        });
-    }
-  }, []);
-
   return (
     <section
       ref={heroSectionRef}
       id="inicio"
       className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
     >
-      <div className="flex flex-row w-full items-center justify-center gap-6">
+      <div className="flex flex-row w-full items-center justify-center gap-6 max-sm:flex-col">
         <div
           id="hero-key"
           className="flex items-center justify-center relative"
@@ -165,10 +145,12 @@ const Inicio = () => {
         </div>
         <div
           ref={heroTitleRef}
-          className="flex flex-col w-1/2 items-start justify-center px-8 hero-title"
+          className="flex flex-col w-1/2 items-start justify-center px-8 hero-title max-sm:w-full"
         >
-          <h1 className="text-5xl font-semibold">Sociedad Femenina</h1>
-          <h1 className="text-[#1d4116] text-8xl font-extrabold">
+          <h1 className="text-5xl font-semibold max-sm:text-2xl  max-sm:w-full  max-sm:text-center">
+            Sociedad Femenina
+          </h1>
+          <h1 className="text-[#1d4116] text-8xl max-sm:text-6xl  max-sm:w-full font-extrabold  max-sm:text-center">
             {" "}
             21 de Junio
           </h1>

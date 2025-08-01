@@ -14,3 +14,34 @@ export type PhotosTypes = {
   name: string;
   album: PhotoTypes[];
 };
+
+export type informationTypes = {
+  id: number;
+  image: string;
+  description: string;
+};
+
+export type musiciansTypes = {
+  id: number;
+  name: string;
+  image: string;
+  history: string;
+};
+
+export type aboutTypes = {
+  id: number;
+  title: string;
+  content: string;
+};
+
+export type participantsTypes = {
+  id: number;
+  name: string;
+  image: string;
+};
+
+export type sponsorsTypes = {
+  id: number;
+  name: string;
+  image: string;
+};

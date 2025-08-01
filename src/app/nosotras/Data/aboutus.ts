@@ -1,4 +1,6 @@
-export const about = [
+import { aboutTypes } from "@/types/types";
+
+export const about: aboutTypes[] = [
   {
     id: 1,
     title: "Como iniciamos1",

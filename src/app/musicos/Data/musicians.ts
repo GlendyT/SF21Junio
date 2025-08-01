@@ -1,4 +1,6 @@
-export const musicians = [
+import { musiciansTypes } from "@/types/types";
+
+export const musicians: musiciansTypes[] = [
   {
     id: 1,
     name: "Musicos 1",

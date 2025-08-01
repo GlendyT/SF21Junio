@@ -21,7 +21,7 @@ export default function Nosotras() {
 
   useGSAP(() => {
     const titleSplit = SplitText.create("#nosotras h1", {
-      type: "words",
+      type: " words",
     });
 
     const scrollTimeline = gsap.timeline({
@@ -41,38 +41,53 @@ export default function Nosotras() {
   });
 
   useGSAP(() => {
-    const parallaxTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#nosotras",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
+    const heroSplit = new SplitText(".title", { type: "chars, words" });
+    const paragraphSplit = new SplitText(".subtitle", { type: "lines" });
+
+    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    gsap.from(heroSplit.chars, {
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.04,
     });
 
-    parallaxTimeline
-      .from("#c-left-leaf", {
-        y: 100,
-        x: 100,
+    gsap.from(paragraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 1,
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#nosotras",
+          start: "-30% top",
+          end: "bottom top",
+          scrub: true,
+        },
       })
-      .from("#c-right-leaf", {
-        y: 100,
-        x: -100,
-      });
-  });
+
+      .to("#right-leaf", { y: 300 }, 0)
+      .to("#left-leaf", { y: -200 }, 0);
+  }, []);
 
   return (
     <section
       className="flex flex-col items-center px-8 h-full justify-center min-h-screen   "
       id="nosotras"
     >
-      <div className="w-full overflow-none h-auto flex flex-row items-center justify-center max-sm:px-2 ">
+      <div className="w-full overflow-none h-auto flex flex-row items-center justify-center max-sm:px-2 px-10 ">
         <div className="flex flex-row items-center w-full justify-between gap-5 overflow-none">
-          <h1 className="text-black font-normal text-2xl max-sm:text-xs flex flex-col ">
-            Sobre Sociedad
-            <span className="text-black text-3xl  font-extrabold max-sm:text-xs">
-              Femenina 21 de Junio, Comalapa
-            </span>
+          <h1 className="text-[#551f12] font-bold  text-4xl max-sm:text-xs flex flex-col w-full  ">
+            <span className="text-5xl font-extrabold max-sm:text-2xl text-[#24511c]">
+              {" "}
+              Sociedad Femenina <br /> 21 de Junio
+            </span>{" "}
+            Comalapa
           </h1>
 
           <Image
@@ -80,7 +95,7 @@ export default function Nosotras() {
             alt="logo"
             width={90}
             height={90}
-            className="max-sm:w-10"
+            className="max-sm:w-14"
           />
         </div>
       </div>
@@ -95,7 +110,7 @@ export default function Nosotras() {
               sx={{
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
-                background: "rgba(99, 218, 172, 0.3)",
+                background: "rgba(222, 245, 236, 0.3)",
                 borderRadius: "8px",
                 margin: "4px 0",
               }}
@@ -189,20 +204,20 @@ export default function Nosotras() {
       </div>
 
       <Image
-        id="c-right-leaf"
+        id="right-leaf"
         src="/bglogo.webp"
         width={300}
         height={300}
         alt="Background Logo"
-        className=" absolute left-0 -z-10  w-1/4  "
+        className=" absolute left-0 -z-10  w-1/4  opacity-60  "
       />
       <Image
-        id="c-left-leaf"
+        id="left-leaf"
         src="/bglogo.webp"
         width={200}
         height={200}
         alt="Background Logo"
-        className="absolute right-0 -z-10 "
+        className="absolute right-0 -z-10 opacity-40 "
       />
     </section>
   );

@@ -1,127 +1,87 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
-import { OriginGallery, photos } from "./Data/photos";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Flip } from "gsap/Flip";
+import React, { useState } from "react";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
+import { photos } from "./Data/photos";
+import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 
 const Album = () => {
-  const GalleryRef = useRef(null);
-  const tl = useRef<gsap.core.Timeline | null>(null);
+  const defaultTab = photos.find((tab) => tab.id === 1) || photos[0];
+  const [activeTab, setActiveTab] = useState(defaultTab.name);
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, Flip);
-    ScrollTrigger.normalizeScroll(true);
+  const activeContent =
+    photos.find((tab) => tab.name === activeTab) || defaultTab;
 
-    const ctx = gsap.context(() => {
-      if (tl.current) {
-        tl.current.kill();
-        gsap.set(GalleryRef.current, { clearProps: "all" });
-      }
-
-      tl.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: GalleryRef.current,
-          endTrigger: GalleryRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      });
-      tl.current.add(
-        tl.current.from(".center-text", {
-          opacity: 0.2,
-          scale: 0.8,
-          y: 80,
-          stagger: {
-            amount: 0.1,
-            from: "start",
-          },
-        })
-      );
-    }, GalleryRef);
-    OriginGallery.forEach((item) => {
-      const state = Flip.getState(`.${item.flipId}-origin`);
-
-      if (tl.current) {
-        tl.current.add(
-          Flip.from(state, {
-            targets: `.${item.flipId}-target`,
-            scale: false,
-            stagger: {
-              amount: 0,
-              from: "start",
-            },
-            duration: 0.3,
-          }),
-          "-=80%"
-        );
-      }
-    });
-    return () => ctx.revert();
-  }, []);
   return (
     <section
-      ref={GalleryRef}
-      className="w-full h-[300vh] relative  "
       id="album"
+      className="flex flex-col items-center px-8 h-full justify-center min-h-screen "
     >
-      <div className="sticky top-0 flex flex-col items-center justify-center w-full h-screen ">
-        <div className="origin-wrapper absolute w-[48%] border-green-500">
-          <div className="relative pt-[84%] w-full  border-blue-400">
-            {OriginGallery.map((item) => {
-              return (
-                <div
-                  key={item.flipId}
-                  data-flip-id={item.flipId}
-                  className={twMerge(
-                    "origin-div absolute aspect-auto w-[34%] h-1/2 border-white",
-                    item.props,
-                    `${item.flipId}-origin`
-                  )}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div
-          id="origin wrapper"
-          className="w-full h-full border-red-500 origin-wrapper"
-        >
-          {photos.map((item) => {
-            return (
-              <div
-                key={item.flipId}
-                data-flip-id={item.flipId}
-                className={twMerge(
-                  "origin-div absolute aspect-auto ",
-                  item.props,
-                  `${item.flipId}-target`
-                )}
+      <div className="flex flex-row items-center justify-between w-full">
+        <h1 className="font-extrabold text-2xl text-[#551f12]">Album</h1>
+
+        {/* Desktop view - botones horizontales */}
+        <div className="hidden sm:flex flex-row">
+          {photos.map((photo) => (
+            <div key={photo.id}>
+              <button
+                className={`px-4 py-2 font-semibold border-b-4 text-xs uppercase cursor-pointer ${
+                  activeTab === photo.name
+                    ? "border-[#1d4116] text-[#24511c] "
+                    : "border-transparent text-[#0d9381]"
+                } hover:text-redE`}
+                onClick={() => setActiveTab(photo.name)}
               >
-                <Image
-                  src={item.image}
-                  alt="Gallery Image"
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                  className="object-cover"
-                />
-                <p className="text-xs text-white absolute bottom-0 left-0 p-2">
-                  {item.creditos}
-                </p>
-              </div>
-            );
-          })}
+                {photo.name}
+              </button>
+            </div>
+          ))}
         </div>
-        <div className="absolute ">
-          <h3 className="text-5xl font-extrabold center-text  ">
-            Sociedad Femenina
-          </h3>
-          <p className="text-lg text-center text-black center-text font-semibold">
-            21 de Junio 2025
-          </p>
+
+        <div className="sm:hidden">
+          <select
+            value={activeTab}
+            onChange={(e) => setActiveTab(e.target.value)}
+            className="px-4 py-2  border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 uppercase text-xs font-semibold cursor-pointer"
+          >
+            {photos.map((photo) => (
+              <option key={photo.id} value={photo.name} className=" ">
+                {photo.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="h-full w-full">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4 mt-8 space-y-4">
+          {activeContent.album.map((photo) => (
+            <div
+              key={photo.id}
+              className="relative group cursor-pointer break-inside-avoid mb-4"
+            >
+              <div className="overflow-hidden rounded-xl bg-gray-100">
+                <Link
+                  href="https://www.instagram.com/sociedad_femenina_21junio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={photo.photo}
+                    alt={`${activeContent.name} - Photo ${photo.id}`}
+                    width={300}
+                    height={Math.floor(Math.random() * (400 - 200) + 200)}
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 backdrop-blur-sm bg-black/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="bg-white bg-opacity-90 rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-200">
+                      <FaInstagram />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

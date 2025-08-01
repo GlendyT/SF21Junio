@@ -1,95 +1,184 @@
-export const photos = [
+import { PhotosTypes } from "@/types/types";
+
+export const photos: PhotosTypes[] = [
   {
     id: 1,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 1",
-    props: "w-[20%] h-[34%] top-[10%] left-[10%]",
-    flipId: "Image1",
+    name: "photographer1",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 2,
+        photo: "/sf21junio2.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21junio4.jpg",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21jjunio6.webp",
+      },
+    ],
   },
   {
     id: 2,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto:2",
-    props: " w-[13%] h-[34%] top-[3%] left-[32%]",
-    flipId: "Image2",
+    name: "photographer2",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio4.jpg",
+      },
+      {
+        id: 2,
+        photo: "/sf21junio2.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21jjunio6.webp",
+      },
+    ],
   },
   {
     id: 3,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto:3",
-    props: " w-[13%] h-[34%] bottom-[10%] left-[5%]",
-    flipId: "Image3",
+    name: "photographer3",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 2,
+        photo: "/sf21jjunio6.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21junio4.jpg",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21junio2.webp",
+      },
+    ],
   },
   {
     id: 4,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 4",
-    props: " w-[13%] h-[34%] bottom-[5%] right-[10%]",
-    flipId: "Image4",
+    name: "photographer4",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 2,
+        photo: "/sf21junio2.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21junio4.jpg",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21jjunio6.webp",
+      },
+    ],
   },
   {
     id: 5,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 5",
-    props: "w-[13%] h-[34%] bottom-[4%] left-[45%]",
-    flipId: "Image5",
+    name: "photographer5",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 2,
+        photo: "/sf21junio2.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21jjunio6.webp",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21junio4.jpg",
+      },
+    ],
   },
   {
     id: 6,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto:6",
-    props: "w-[13%] h-[34%] top-[10%] right-[3%]",
-    flipId: "Image6",
+    name: "photographer6",
+    album: [
+      {
+        id: 1,
+        photo: "/sf21junio.png",
+      },
+      {
+        id: 2,
+        photo: "/sf21junio2.webp",
+      },
+      {
+        id: 3,
+        photo: "/sf21junio3.webp",
+      },
+      {
+        id: 4,
+        photo: "/sf21junio4.jpg",
+      },
+      {
+        id: 5,
+        photo: "/sf21junio5.webp",
+      },
+      {
+        id: 6,
+        photo: "/sf21jjunio6.webp",
+      },
+    ],
   },
-  {
-    id: 7,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 7",
-    props: "w-[13%] h-[34%] bottom-[9%] left-[60%]",
-    flipId: "Image7",
-  },
-  {
-    id: 8,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 8",
-    props: "w-[13%] h-[34%] top-[10%] right-[20%]",
-    flipId: "Image8",
-  },
-  {
-    id: 9,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto:9",
-    props: "w-[13%] h-[34%] top-[55%] left-[30%]",
-    flipId: "Image9",
-  },
-  {
-    id: 10,
-    name: "photo1",
-    image: "/sf21junio.png",
-    creditos: "Foto: 10",
-    props: " w-[13%] h-[30%] top-[70%] left-[15%]",
-    flipId: "Image10",
-  },
-];
-
-export const OriginGallery = [
-  { flipId: "Image1", props: "top-[0%] left-[15%]" },
-  { flipId: "Image2", props: "top-[10%] left-[10%]" },
-  { flipId: "Image3", props: "bottom-[10%] left-[20%]" },
-  { flipId: "Image4", props: "bottom-[5%] right-[20%]" },
-  { flipId: "Image5", props: "bottom-[20%] left-[40%]" },
-  { flipId: "Image6", props: "top-[0%] right-[13%]" },
-  { flipId: "Image7", props: "top-[8%] right-[1%]" },
-  { flipId: "Image8", props: "bottom-[10%] right-[3%]" },
-  { flipId: "Image9", props: "bottom-[50%] right-[3%]" },
-  { flipId: "Image10", props: "top-[5%] right-[0%]" },
 ];

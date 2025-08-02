@@ -117,7 +117,7 @@ const Inicio = () => {
 
   return (
     <section
-      ref={heroSectionRef}
+      ref={heroSectionRef} 
       id="inicio"
       className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
     >

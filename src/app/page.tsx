@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/utils/Footer";
 import Inicio from "./inicio/page";
 import Musicos from "./musicos/page";
@@ -9,15 +10,15 @@ import Album from "./Album/page";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Inicio />
       <Patrocinadores />
       <Historia />
-       <Nosotras /> 
-       <Album /> 
+      <Nosotras />
+      <Album />
       <Participantes />
       <Musicos />
       <Footer />
-    </>
+    </main>
   );
 }

@@ -14,14 +14,12 @@ const Inicio = () => {
 
   useGSAP(() => {
     if (heroBgRef.current && heroSectionRef.current) {
-      // Set initial state
       gsap.set(heroBgRef.current, {
         scale: 0,
         opacity: 0,
         transformOrigin: "center center",
       });
 
-      // Create ScrollTrigger animation
       ScrollTrigger.create({
         trigger: heroSectionRef.current,
         start: "top 80%",
@@ -56,6 +54,7 @@ const Inicio = () => {
             opacity: 0,
             duration: 1,
             ease: "power2.inOut",
+            
           });
         },
       });
@@ -64,13 +63,11 @@ const Inicio = () => {
 
   useGSAP(() => {
     if (heroTitleRef.current) {
-      // Set initial state for titles
       gsap.set(".hero-title h1", {
         y: 50,
         opacity: 0,
       });
 
-      // Create ScrollTrigger animation
       ScrollTrigger.create({
         trigger: heroTitleRef.current,
         start: "top 80%",

@@ -1,6 +1,7 @@
-import { aboutTypes } from "@/types/types";
+import { aboutinterfaces } from "@/types/types";
 
-export const about: aboutTypes[] = [
+
+export const about: aboutinterfaces[] = [
   {
     id: 1,
     title: "Como iniciamos1",

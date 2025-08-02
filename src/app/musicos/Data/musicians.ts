@@ -1,6 +1,7 @@
-import { musiciansTypes } from "@/types/types";
+import { musiciansinterfaces } from "@/types/types";
 
-export const musicians: musiciansTypes[] = [
+
+export const musicians: musiciansinterfaces[] = [
   {
     id: 1,
     name: "Musicos 1",

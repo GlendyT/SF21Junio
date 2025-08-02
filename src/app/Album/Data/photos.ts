@@ -1,6 +1,8 @@
-import { PhotosTypes } from "@/types/types";
+import { Photosinterfaces } from "@/types/types";
 
-export const photos: PhotosTypes[] = [
+
+
+export const photos: Photosinterfaces[] = [
   {
     id: 1,
     name: "photographer1",

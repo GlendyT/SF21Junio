@@ -1,4 +1,6 @@
-export const sponsors = [
+import { sponsorsTypes } from "@/types/types";
+
+export const sponsors: sponsorsTypes[] = [
   {
     id: 1,
     name: "ejayu",

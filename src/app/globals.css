@@ -4,79 +4,38 @@ body {
   overflow-x: hidden;
 }
 
+.colors {
+  --sfGreen: #00624f;
+  --sfGreen8: #1d4116;
+  --sfGreen7: #24511c;
+  --sfGreen6: #949176;
+  --sfGreen5: #0d9381;
+  --sfGreen4: #1ecbb8;
+  --sfGreen3: #64cbaa;
+  --sfGreen2: #a7afa4;
+  --sfGreen1: #d6e2d1;
 
-.sfGreen {
-  color: #00624f;
-}
-.sfGreen8 {
-  color: #1d4116;
-}
-.sfGreen7 {
-  color: #24511c;
-}
-.sfGreen6 {
-  color: #949176;
-}
-.sfGreen5 {
-  color: #0d9381;
-}
-.sfGreen4 {
-  color: #1ecbb8;
-}
-.sfGreen3 {
-  color: #64cbaa;
-}
+  --sfBrown4: #551f12;
+  --sfBrown3: #85572b;
+  --sfBrown2: #b28041;
+  --sfBrown1: #db9b7d;
 
-.sfGreen2 {
-  color: #a7afa4;
-}
-.sfGreen1 {
-  color: #d6e2d1;
-}
+  --sfRed6: #a22110;
+  --sfRed5: #b63e15;
+  --sfRed4: #d06a19;
+  --sfRed3: #f1782a;
+  --sfRed2: #dea62e;
+  --sfRed1: #e1c743;
 
-.sfBrown4 {
-  color: #551f12;
-}
-.sfBrown3 {
-  color: #85572b;
-}
-.sfBrown2 {
-  color: #b28041;
-}
-.sfBrown1 {
-  color: #db9b7d;
-}
-
-.sfRed6 {
-  color: #a22110;
-}
-.sfRed5 {
-  color: #b63e15;
-}
-.sfRed4 {
-  color: #d06a19;
-}
-.sfRed3 {
-  color: #f1782a;
-}
-.sfRed2 {
-  color: #dea62e;
-}
-.sfRed1 {
-  color: #e1c743;
-}
-.sfBlue2 {
-  color: #181d1d;
-}
-.sfBlue1 {
-  color: #1a4068;
+  --sfBlue2: #181d1d;
+  --sfBlue1: #1a4068;
 }
 
 @utility masked-img {
-    mask-image: url("/logo2.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 50%;
+  mask-image: url("/logo2.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
 }
 
 .marqueeanimation {
@@ -91,8 +50,8 @@ body {
   0% {
     left: 0;
   }
+
   100% {
     left: -100%;
   }
 }
-

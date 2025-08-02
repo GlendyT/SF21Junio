@@ -1,4 +1,6 @@
-export const about = [
+import { aboutTypes } from "@/types/types";
+
+export const about: aboutTypes[] = [
   {
     id: 1,
     title: "Como iniciamos1",
@@ -50,24 +52,6 @@ export const about = [
   {
     id: 9,
     title: "Como iniciamos9",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptates accusamus amet quod iusto ut voluptatem qui dolores repudiandae deserunt. Labore accusamus fuga deserunt distinctio non asperiores, recusandae qui nostrum! ",
-  },
-  {
-    id: 10,
-    title: "Como iniciamos10",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptates accusamus amet quod iusto ut voluptatem qui dolores repudiandae deserunt. Labore accusamus fuga deserunt distinctio non asperiores, recusandae qui nostrum! ",
-  },
-  {
-    id: 11,
-    title: "Como iniciamos11",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptates accusamus amet quod iusto ut voluptatem qui dolores repudiandae deserunt. Labore accusamus fuga deserunt distinctio non asperiores, recusandae qui nostrum! ",
-  },
-  {
-    id: 12,
-    title: "Como iniciamos12",
     content:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptates accusamus amet quod iusto ut voluptatem qui dolores repudiandae deserunt. Labore accusamus fuga deserunt distinctio non asperiores, recusandae qui nostrum! ",
   },

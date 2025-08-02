@@ -1,4 +1,6 @@
-export const participants = [
+import { participantsTypes } from "@/types/types";
+
+export const participants: participantsTypes[] = [
   {
     id: 1,
     name: "Name1",

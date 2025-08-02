@@ -1,6 +1,7 @@
-import { participantsTypes } from "@/types/types";
+import { participantsinterfaces } from "@/types/types";
 
-export const participants: participantsTypes[] = [
+
+export const participants: participantsinterfaces[] = [
   {
     id: 1,
     name: "Name1",

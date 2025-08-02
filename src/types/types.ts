@@ -1,47 +1,60 @@
-export type NavLinksTypes = {
+export interface NavLinksinterfaces {
   id: number;
   name: string;
   href: string;
-};
+}
 
-export type PhotoTypes = {
+export interface Photointerfaces {
   id: number;
   photo: string;
-};
+}
 
-export type PhotosTypes = {
+export interface Photosinterfaces {
   id: number;
   name: string;
-  album: PhotoTypes[];
-};
+  album: Photointerfaces[];
+}
 
-export type informationTypes = {
+export interface informationinterfaces {
   id: number;
   image: string;
   description: string;
-};
+}
 
-export type musiciansTypes = {
+export interface musiciansinterfaces {
   id: number;
   name: string;
   image: string;
   history: string;
-};
+}
 
-export type aboutTypes = {
+export interface aboutinterfaces {
   id: number;
   title: string;
   content: string;
-};
+}
 
-export type participantsTypes = {
+export interface participantsinterfaces {
   id: number;
   name: string;
   image: string;
-};
+}
 
-export type sponsorsTypes = {
+export interface sponsorsinterfaces {
   id: number;
   name: string;
   image: string;
-};
+}
+
+
+export interface Sobrenosotrasinterfaces {
+  sobrenosotras: {
+    id: number;
+    title: string;
+    content: string;
+  };
+  expanded: string | false;
+  handleChange: (
+    panel: string
+  ) => (event: React.SyntheticEvent, isExpanded: boolean) => void;
+}

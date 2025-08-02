@@ -1,6 +1,7 @@
-import { informationTypes } from "@/types/types";
+import { informationinterfaces } from "@/types/types";
 
-export const information: informationTypes[] = [
+
+export const information: informationinterfaces[] = [
   {
     id: 1,
     image:

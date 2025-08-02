@@ -1,6 +1,7 @@
-import { sponsorsTypes } from "@/types/types";
+import { sponsorsinterfaces } from "@/types/types";
 
-export const sponsors: sponsorsTypes[] = [
+
+export const sponsors: sponsorsinterfaces[] = [
   {
     id: 1,
     name: "ejayu",

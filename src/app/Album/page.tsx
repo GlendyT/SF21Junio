@@ -4,6 +4,8 @@ import Image from "next/image";
 import { photos } from "./Data/photos";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Album = () => {
   const defaultTab = photos.find((tab) => tab.id === 1) || photos[0];
@@ -11,6 +13,25 @@ const Album = () => {
 
   const activeContent =
     photos.find((tab) => tab.name === activeTab) || defaultTab;
+
+        useGSAP(() => {
+        gsap.fromTo(
+          ".tech-card",
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: "#album",
+              start: "top center",
+              toggleActions: "play pause resume reset",
+            },
+          }
+        );
+      });
 
   return (
     <section
@@ -58,7 +79,7 @@ const Album = () => {
           {activeContent.album.map((photo) => (
             <div
               key={photo.id}
-              className="relative group cursor-pointer break-inside-avoid mb-4"
+              className="relative group cursor-pointer break-inside-avoid mb-4 tech-card "
             >
               <div className="overflow-hidden rounded-xl bg-gray-100">
                 <Link

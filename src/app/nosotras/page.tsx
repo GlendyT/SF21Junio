@@ -54,6 +54,7 @@ export default function Nosotras() {
       ease: "expo.out",
       stagger: 0.06,
       delay: 1,
+      
     });
 
     gsap
@@ -63,6 +64,7 @@ export default function Nosotras() {
           start: "-30% top",
           end: "bottom top",
           scrub: true,
+          toggleActions: "play reverse play reverse",
         },
       })
 

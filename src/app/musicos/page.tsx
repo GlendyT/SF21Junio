@@ -18,6 +18,7 @@ const Musicos = () => {
       scrollTrigger: {
         trigger: "#musicos",
         start: "top center",
+        toggleActions: "play pause resume reset",
       },
     });
 

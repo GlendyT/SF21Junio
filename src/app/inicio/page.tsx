@@ -4,10 +4,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Inicio = () => {
+  const isTablet = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useMediaQuery("(max-width: 600px)");
+
   const heroBgRef = useRef<HTMLImageElement>(null);
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroTitleRef = useRef<HTMLDivElement>(null);
@@ -20,42 +24,16 @@ const Inicio = () => {
         transformOrigin: "center center",
       });
 
-      ScrollTrigger.create({
-        trigger: heroSectionRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        onEnter: () => {
-          gsap.to(heroBgRef.current, {
-            scale: 1.3,
-            opacity: 1,
-            duration: 2.5,
-            ease: "back.out(1.7)",
-          });
-        },
-        onLeave: () => {
-          gsap.to(heroBgRef.current, {
-            scale: 0,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.inOut",
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(heroBgRef.current, {
-            scale: 1.3,
-            opacity: 1,
-            duration: 2.5,
-            ease: "back.out(1.7)",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(heroBgRef.current, {
-            scale: 0,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.inOut",
-            
-          });
+      gsap.to(heroBgRef.current, {
+        scale: 1.3,
+        opacity: 1,
+        duration: 2.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: heroSectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
         },
       });
     }
@@ -68,45 +46,17 @@ const Inicio = () => {
         opacity: 0,
       });
 
-      ScrollTrigger.create({
-        trigger: heroTitleRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        onEnter: () => {
-          gsap.to(".hero-title h1", {
-            y: 0,
-            opacity: 1,
-            stagger: 0.2,
-            duration: 1,
-            ease: "power2.inOut",
-          });
-        },
-        onLeave: () => {
-          gsap.to(".hero-title h1", {
-            y: -50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.8,
-            ease: "power2.inOut",
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(".hero-title h1", {
-            y: 0,
-            opacity: 1,
-            stagger: 0.2,
-            duration: 1,
-            ease: "power2.inOut",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(".hero-title h1", {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.8,
-            ease: "power2.inOut",
-          });
+      gsap.to(".hero-title h1", {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: heroTitleRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
         },
       });
     }
@@ -114,7 +64,7 @@ const Inicio = () => {
 
   return (
     <section
-      ref={heroSectionRef} 
+      ref={heroSectionRef}
       id="inicio"
       className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
     >
@@ -126,16 +76,16 @@ const Inicio = () => {
           <Image
             ref={heroBgRef}
             src="/bglogo.webp"
-            width={950}
-            height={950}
+            width={isMobile ? 500 : isTablet ? 700 : 950}
+            height={isMobile ? 500 : isTablet ? 700 : 950}
             alt="Background Logo"
             className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           />
           <Image
             id="hero-logo"
             src="/main logo.webp"
-            width={400}
-            height={200}
+            width={isMobile ? 250 : isTablet ? 320 : 400}
+            height={isMobile ? 125 : isTablet ? 160 : 200}
             alt="Main Logo"
             className="relative z-20"
           />

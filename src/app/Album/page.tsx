@@ -6,32 +6,52 @@ import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
+  const isTablet = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useMediaQuery("(max-width: 600px)");
   const defaultTab = photos.find((tab) => tab.id === 1) || photos[0];
   const [activeTab, setActiveTab] = useState(defaultTab.name);
 
   const activeContent =
     photos.find((tab) => tab.name === activeTab) || defaultTab;
 
-        useGSAP(() => {
-        gsap.fromTo(
-          ".tech-card",
-          { y: 50, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.inOut",
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: "#album",
-              start: "top center",
-              toggleActions: "play pause resume reset",
-            },
-          }
-        );
-      });
+  // Función para generar altura consistente basada en el ID
+  const getConsistentHeight = (photoId: number) => {
+    const seed = photoId * 31; // Usar el ID como key
+    const normalized = (seed % 100) / 100; // Normalizar entre 0-1
+    
+    if (isMobile) {
+      return Math.floor(150 + normalized * (300 - 150));
+    } else if (isTablet) {
+      return Math.floor(175 + normalized * (350 - 175));
+    } else {
+      return Math.floor(200 + normalized * (400 - 200));
+    }
+  };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".tech-card",
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: "#album",
+          start: "top center",
+          toggleActions: "play pause resume reset",
+        },
+      }
+    );
+  });
 
   return (
     <section
@@ -90,8 +110,8 @@ const Album = () => {
                   <Image
                     src={photo.photo}
                     alt={`${activeContent.name} - Photo ${photo.id}`}
-                    width={300}
-                    height={Math.floor(Math.random() * (400 - 200) + 200)}
+                    width={isMobile ? 200 : isTablet ? 250 : 300}
+                    height={getConsistentHeight(photo.id)}
                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 backdrop-blur-sm bg-black/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100">

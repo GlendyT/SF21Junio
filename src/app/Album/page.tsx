@@ -24,7 +24,7 @@ const Album = () => {
   const getConsistentHeight = (photoId: number) => {
     const seed = photoId * 31; // Usar el ID como key
     const normalized = (seed % 100) / 100; // Normalizar entre 0-1
-    
+
     if (isMobile) {
       return Math.floor(150 + normalized * (300 - 150));
     } else if (isTablet) {
@@ -46,8 +46,10 @@ const Album = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: "#album",
-          start: "top center",
+          start: "-40% center",
+          end: "bottom 20%",
           toggleActions: "play pause resume reset",
+
         },
       }
     );

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { participants } from "./Data/participants";
 import Image from "next/image";
@@ -6,10 +6,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Participantes = () => {
-
-    useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
-      ".tech-card",
+      ".participant-card",
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -19,7 +18,10 @@ const Participantes = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: "#participantes",
-          start: "top center",
+          start: "-50% center",
+          end: "bottom 20%",
+          toggleActions: "play pause resume reset",
+         
         },
       }
     );
@@ -34,7 +36,7 @@ const Participantes = () => {
           {participants.map((solos) => (
             <div
               key={solos.id}
-              className="flex flex-col items-center justify-center tech-card"
+              className="flex flex-col items-center justify-center participant-card"
             >
               <Image
                 src={solos.image}

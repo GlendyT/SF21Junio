@@ -23,6 +23,9 @@ export default function Nosotras() {
       scrollTrigger: {
         trigger: "#nosotras",
         start: "top center",
+        end: "bottom 20%",
+        toggleActions: "play reverse play reverse",
+
       },
     });
 
@@ -54,7 +57,6 @@ export default function Nosotras() {
       ease: "expo.out",
       stagger: 0.06,
       delay: 1,
-      
     });
 
     gsap
@@ -103,7 +105,11 @@ export default function Nosotras() {
             key={sobrenosotras.id}
             className="w-1/2 max-sm:w-full px-2 max-md:px-1 max-sm:px-0.5 p-0.5"
           >
-            <Acordion sobrenosotras={sobrenosotras} handleChange={handleChange} expanded={expanded} />
+            <Acordion
+              sobrenosotras={sobrenosotras}
+              handleChange={handleChange}
+              expanded={expanded}
+            />
           </div>
         ))}
       </div>

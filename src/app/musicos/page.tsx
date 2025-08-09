@@ -17,7 +17,8 @@ const Musicos = () => {
     const scrollTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#musicos",
-        start: "top center",
+        start: "-50% center",
+        end: "bottom",
         toggleActions: "play pause resume reset",
       },
     });

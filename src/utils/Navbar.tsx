@@ -3,28 +3,8 @@ import { navLinks } from "@/constants";
 import { usePage } from "@/hooks/usePage";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-
 const Navbar = () => {
   const { isScrolled } = usePage();
-  const [open, setOpen] = useState(false);
-  const sidebarRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(e.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <header
@@ -44,12 +24,6 @@ const Navbar = () => {
           </Link>
         ))}
       </nav>
-      <div
-        className="max-sm:visible max-sm:flex items-center justify-center hidden "
-        onClick={() => setOpen(!open)}
-      >
-        🟰
-      </div>
     </header>
   );
 };

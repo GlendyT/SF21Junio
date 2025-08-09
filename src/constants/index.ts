@@ -1,19 +1,17 @@
 import { NavLinksinterfaces } from "../types/types";
 
-
-
 export const navLinks: NavLinksinterfaces[] = [
-  {
-    id: 1,
-    name: "Inicio",
-    href: "#inicio",
-  },
+  // {
+  //   id: 1,
+  //   name: "Inicio",
+  //   href: "#inicio",
+  // },
   {
     id: 2,
-    name :"Historia",
-    href :"#historia",
+    name: "Historia",
+    href: "#historia",
   },
-   {
+  {
     id: 3,
     name: "Nosotras",
     href: "#nosotras",

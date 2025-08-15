@@ -4,13 +4,12 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useLogic } from "@/hooks/useLogic";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Inicio = () => {
-  const isTablet = useMediaQuery("(max-width: 1024px)");
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const { isTablet, isMobile} = useLogic()
 
   const heroBgRef = useRef<HTMLImageElement>(null);
   const heroSectionRef = useRef<HTMLElement>(null);

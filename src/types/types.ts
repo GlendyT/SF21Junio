@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface NavLinksinterfaces {
   id: number;
   name: string;
@@ -13,6 +15,12 @@ export interface Photosinterfaces {
   id: number;
   name: string;
   album: Photointerfaces[];
+}
+
+export interface Videointerfaces {
+  id: number;
+  name: string;
+  video: string;
 }
 
 export interface informationinterfaces {
@@ -46,7 +54,6 @@ export interface sponsorsinterfaces {
   image: string;
 }
 
-
 export interface Sobrenosotrasinterfaces {
   sobrenosotras: {
     id: number;
@@ -58,3 +65,32 @@ export interface Sobrenosotrasinterfaces {
     panel: string
   ) => (event: React.SyntheticEvent, isExpanded: boolean) => void;
 }
+
+export type PageContextType = {
+  scrollToSection: (sectionId: string) => void;
+  isScrolled: boolean;
+};
+
+export type AllProviderProps = {
+  children: ReactNode;
+};
+
+export type LogicContextType = {
+  isMobile: boolean;
+  isTablet: boolean;
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+  activeContent: Photosinterfaces;
+  getConsistentHeight: (photoId: number) => number;
+  expanded: string | false;
+  handleChange: (
+    panel: string
+  ) => (event: React.SyntheticEvent, isExpanded: boolean) => void;
+};
+
+export type BotonesProps = {
+  label?: string;
+  className?: string;
+  onClick?: () => void;
+  icon?: ReactNode;
+};

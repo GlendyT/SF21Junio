@@ -1,19 +1,12 @@
 "use client";
-import { ReactNode, useEffect, useState } from "react";
+import { AllProviderProps, PageContextType } from "@/types/types";
+import {  useEffect, useState } from "react";
 import { createContext } from "react";
 
-type PageContextType = {
-  scrollToSection: (sectionId: string) => void;
-  isScrolled: boolean;
-};
-
-type PageProviderProps = {
-  children: ReactNode;
-};
 
 const PageContext = createContext<PageContextType>(null!);
 
-const PageProvider = ({ children }: PageProviderProps) => {
+const PageProvider = ({ children }: AllProviderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection = (sectionId: string) => {

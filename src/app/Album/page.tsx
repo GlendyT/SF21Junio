@@ -1,38 +1,25 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
 import { photos } from "./Data/photos";
-import Link from "next/link";
+import { useLogic } from "@/hooks/useLogic";
 import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import Image from "next/image";
+import Videos from "./Videos";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
-  const isTablet = useMediaQuery("(max-width: 1024px)");
-  const isMobile = useMediaQuery("(max-width: 600px)");
-  const defaultTab = photos.find((tab) => tab.id === 1) || photos[0];
-  const [activeTab, setActiveTab] = useState(defaultTab.name);
-
-  const activeContent =
-    photos.find((tab) => tab.name === activeTab) || defaultTab;
-
-  // Función para generar altura consistente basada en el ID
-  const getConsistentHeight = (photoId: number) => {
-    const seed = photoId * 31; // Usar el ID como key
-    const normalized = (seed % 100) / 100; // Normalizar entre 0-1
-
-    if (isMobile) {
-      return Math.floor(150 + normalized * (300 - 150));
-    } else if (isTablet) {
-      return Math.floor(175 + normalized * (350 - 175));
-    } else {
-      return Math.floor(200 + normalized * (400 - 200));
-    }
-  };
+  const {
+    activeTab,
+    setActiveTab,
+    activeContent,
+    getConsistentHeight,
+    isMobile,
+    isTablet,
+  } = useLogic();
 
   useGSAP(() => {
     gsap.fromTo(
@@ -49,21 +36,18 @@ const Album = () => {
           start: "-40% center",
           end: "bottom 20%",
           toggleActions: "play pause resume reset",
-
         },
       }
     );
-  });
+  }, [activeContent]);
 
   return (
     <section
       id="album"
-      className="flex flex-col items-center px-8 h-full justify-center min-h-screen "
+      className="flex flex-col items-center px-8 h-full justify-center min-h-screen pt-20 "
     >
       <div className="flex flex-row items-center justify-between w-full">
         <h1 className="font-extrabold text-2xl text-[#551f12]">Album</h1>
-
-        {/* Desktop view - botones horizontales */}
         <div className="hidden sm:flex flex-row">
           {photos.map((photo) => (
             <div key={photo.id}>
@@ -127,6 +111,7 @@ const Album = () => {
           ))}
         </div>
       </div>
+      <Videos />
     </section>
   );
 };

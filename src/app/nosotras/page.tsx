@@ -1,18 +1,14 @@
 "use client";
+import * as React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap, { SplitText } from "gsap/all";
-import * as React from "react";
 import { about } from "./Data/aboutus";
+import { useLogic } from "@/hooks/useLogic";
 import Image from "next/image";
 import Acordion from "@/components/Acordion";
 
 export default function Nosotras() {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const { handleChange, expanded } = useLogic();
 
   useGSAP(() => {
     const titleSplit = SplitText.create("#nosotras h1", {
@@ -25,7 +21,6 @@ export default function Nosotras() {
         start: "top center",
         end: "bottom 20%",
         toggleActions: "play reverse play reverse",
-
       },
     });
 
@@ -76,7 +71,7 @@ export default function Nosotras() {
 
   return (
     <section
-      className="flex flex-col items-center px-8 h-full justify-center min-h-screen   "
+      className="flex flex-col items-center px-8 h-full justify-center pt-20  "
       id="nosotras"
     >
       <div className="w-full overflow-none h-auto flex flex-row items-center justify-center max-sm:px-2 px-10 ">

@@ -7,6 +7,7 @@ import Participantes from "./participantes/page";
 import Patrocinadores from "./patrocinadores/page";
 import Historia from "./Historia/page";
 import Album from "./Album/page";
+import Videos from "./Album/Videos";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Historia />
       <Nosotras />
       <Album />
+      <Videos />
       <Participantes />
       <Musicos />
       <Footer />

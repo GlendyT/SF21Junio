@@ -7,7 +7,6 @@ import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Videos from "./Videos";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,7 +110,6 @@ const Album = () => {
           ))}
         </div>
       </div>
-      <Videos />
     </section>
   );
 };

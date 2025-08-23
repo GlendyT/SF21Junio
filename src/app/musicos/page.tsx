@@ -73,7 +73,7 @@ const Musicos = () => {
                               key={social.id}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-2xl"
+                              className="text-2xl rounded-full p-1 hover:scale-105 transition-all duration-150 border-2"
                             >
                               <social.icon />
                             </Link>
@@ -116,7 +116,7 @@ const Musicos = () => {
                               key={social.id}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-2xl"
+                              className="text-2xl rounded-full p-1 hover:scale-105 transition-all duration-150 border-2"
                             >
                               <social.icon />
                             </Link>

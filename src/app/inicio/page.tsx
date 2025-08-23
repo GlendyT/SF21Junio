@@ -9,11 +9,11 @@ import { useLogic } from "@/hooks/useLogic";
 gsap.registerPlugin(ScrollTrigger);
 
 const Inicio = () => {
-  const { isTablet, isMobile} = useLogic()
+  const { isTablet, isMobile} = useLogic() || { isTablet: false, isMobile: false }
 
   const heroBgRef = useRef<HTMLImageElement>({} as HTMLImageElement);
-  const heroSectionRef = useRef<HTMLElement>({} as HTMLImageElement);
-  const heroTitleRef = useRef<HTMLDivElement>({} as HTMLImageElement);
+  const heroSectionRef = useRef<HTMLElement>({} as HTMLElement);
+  const heroTitleRef = useRef<HTMLDivElement>({} as HTMLDivElement);
 
   useGSAP(() => {
     if (heroBgRef.current && heroSectionRef.current) {

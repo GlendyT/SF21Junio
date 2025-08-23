@@ -11,9 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Inicio = () => {
   const { isTablet, isMobile} = useLogic()
 
-  const heroBgRef = useRef<HTMLImageElement>(null);
-  const heroSectionRef = useRef<HTMLElement>(null);
-  const heroTitleRef = useRef<HTMLDivElement>(null);
+  const heroBgRef = useRef<HTMLImageElement>({} as HTMLImageElement);
+  const heroSectionRef = useRef<HTMLElement>({} as HTMLImageElement);
+  const heroTitleRef = useRef<HTMLDivElement>({} as HTMLImageElement);
 
   useGSAP(() => {
     if (heroBgRef.current && heroSectionRef.current) {

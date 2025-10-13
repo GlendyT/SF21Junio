@@ -73,3 +73,16 @@ body {
     rgba(255, 255, 255, 0) 100%
   );
 }
+
+
+.gradient-line {
+  width: 2px;
+  background: linear-gradient(
+    0deg,
+    rgba(63, 165, 149, 0) 0%,
+    #00624f 25%,
+    #0d9381 37.51%,
+    #b63e15 62.83%,
+    #e1c743 92.91%
+  );
+}

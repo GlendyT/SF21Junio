@@ -102,7 +102,7 @@ const Musicos = () => {
                     </div>
                     {/* Tarjeta de información - Z-index más bajo para que esté "atrás" */}
                     <div className="absolute right-0 top-10 w-3/5 z-10">
-                      <div className="rounded-xl py-6 text-end pl-60 pr-6  h-auto object-cover shadow-xl backdrop-blur-lg bg-gradient-to-b from-[#65d3bd]/90 via-[#da6c13]/50 to-[#9a430a]/70 overflow-auto max-h-[400px]">
+                      <div className="rounded-xl py-6 text-end pl-44 pr-6  h-auto object-cover shadow-xl backdrop-blur-lg bg-gradient-to-b from-[#65d3bd]/90 via-[#da6c13]/50 to-[#9a430a]/70 overflow-auto max-h-[400px]">
                         <h1 className="text-2xl mb-2 font-extrabold">
                           {musicos.name}
                         </h1>

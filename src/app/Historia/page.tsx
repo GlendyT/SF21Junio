@@ -23,7 +23,7 @@ export default function Historia() {
                 className="rounded-xl h-[450px] object-cover max-sm:rounded-sm"
               />
 
-              <div className="relative md:absolute md:left-[75%] md:transform md:-translate-x-1/2 h-[480px] bottom-4 w-[60%] max-sm:w-[90%] max-sm:h-50 mx-auto -mt-40  text-black rounded-xl p-10 shadow-xl backdrop-blur-lg bg-gradient-to-b from-[#65d3bd]/90 via-[#da6c13]/50 to-[#9a430a]/70">
+              <div className="relative md:absolute md:left-[75%] md:transform md:-translate-x-1/2 h-auto bottom-4 w-[60%] max-sm:w-[90%] max-sm:h-50 mx-auto -mt-40  text-black rounded-xl p-10 shadow-xl backdrop-blur-lg bg-gradient-to-b from-[#65d3bd]/90 via-[#da6c13]/50 to-[#9a430a]/70">
                 <p className="text-sm text-center">{info.description}</p>
               </div>
             </div>

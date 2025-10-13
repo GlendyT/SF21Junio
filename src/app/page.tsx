@@ -8,6 +8,7 @@ import Patrocinadores from "./patrocinadores/page";
 import Historia from "./Historia/page";
 import Album from "./Album/page";
 import Videos from "./Album/Videos";
+import Experencia from "./Experencia/page";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Nosotras />
       <Album />
       <Videos />
+      <Experencia/>
       <Participantes />
       <Musicos />
       <Footer />

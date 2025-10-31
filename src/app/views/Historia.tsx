@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { information } from "./data/information";
+import { information } from "../historia/data/information";
 
 export default function Historia() {
   return (

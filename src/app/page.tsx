@@ -8,9 +8,9 @@ import Participantes from "./participantes/Participantes";
 import Musicos from "./musicos/Musicos";
 import Footer from "@/utils/Footer";
 import Experiencia from "./(experiencia)/Experiencia";
-import Historia from "./historia/Historia";
 import Album from "./views/Album";
 import Videos from "./views/Videos";
+import Historia from "./views/Historia";
 
 export default function Home() {
   return (

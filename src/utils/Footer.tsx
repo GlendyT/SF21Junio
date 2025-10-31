@@ -1,6 +1,7 @@
-import { navLinks, socialmedia } from "@/constants";
+
 import Image from "next/image";
 import Link from "next/link";
+import { navLinks, socialmedia } from "../constants";
 
 const Footer = () => {
   return (

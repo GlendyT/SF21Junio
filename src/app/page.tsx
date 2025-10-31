@@ -1,15 +1,15 @@
 "use client";
 
 import { poppins } from "@/utils/Fonts";
-import Inicio from "./inicio/page";
-import Patrocinadores from "./patrocinadores/page";
-import Historia from "./historia/page";
-import Nosotras from "./nosotras/page";
-import Album from "./album/page";
+import Inicio from "./inicio/Inicio";
+import Patrocinadores from "./patrocinadores/Patrocinadores";
+import Historia from "./historia/Historia";
+import Nosotras from "./nosotras/Nosotras";
+import Album from "./album/Album";
 import Videos from "./album/Videos";
 import Experencia from "./(experencia)/Experiencia";
-import Participantes from "./participantes/page";
-import Musicos from "./musicos/page";
+import Participantes from "./participantes/Participantes";
+import Musicos from "./musicos/Musicos";
 import Footer from "@/utils/Footer";
 
 export default function Home() {

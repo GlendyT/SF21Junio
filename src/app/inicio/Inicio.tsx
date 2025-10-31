@@ -5,11 +5,15 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { useLogic } from "@/hooks/useLogic";
+import { cherry, playball, poppins } from "@/utils/Fonts";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Inicio = () => {
-  const { isTablet, isMobile} = useLogic() || { isTablet: false, isMobile: false }
+  const { isTablet, isMobile } = useLogic() || {
+    isTablet: false,
+    isMobile: false,
+  };
 
   const heroBgRef = useRef<HTMLImageElement>({} as HTMLImageElement);
   const heroSectionRef = useRef<HTMLElement>({} as HTMLElement);
@@ -61,11 +65,13 @@ const Inicio = () => {
     }
   }, []);
 
+
+
   return (
     <section
       ref={heroSectionRef}
       id="inicio"
-      className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#1bb092]/100 via-[#da6c13]/40 to-[#9a430a]/60 to-99%"
+      className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-[#5ae9cc]/60 via-[#ed9146]/30 to-[#f99c5e]/60 to-99%"
     >
       <div className="flex flex-row w-full items-center justify-center gap-6 max-sm:flex-col">
         <div
@@ -91,13 +97,28 @@ const Inicio = () => {
         </div>
         <div
           ref={heroTitleRef}
-          className="flex flex-col w-1/2 items-start justify-center px-8 hero-title max-sm:w-full"
+          className="space-y-0 text-center w-1/2 items-center justify-center px-8 hero-title max-sm:w-full"
         >
-          <h1 className="text-5xl font-semibold max-sm:text-2xl  max-sm:w-full  max-sm:text-center">
-            Sociedad Femenina
+          <h1
+            className={`text-9xl max-sm:text-7xl  max-sm:w-full  max-sm:text-center inline-block bg-gradient-to-b from-red-600 via-red-500 to-orange-400 bg-clip-text  font-extrabold text-transparent  ${cherry.className} `}
+            style={{
+              textShadow: "  4px 8px 4px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            SOCIEDAD
+
           </h1>
-          <h1 className="text-[#1d4116] text-8xl max-sm:text-6xl  max-sm:w-full font-extrabold  max-sm:text-center">
-            {" "}
+          <h1
+            className={`text-7xl font-extrabold max-sm:text-5xl  max-sm:w-full  max-sm:text-center text-red-600 ${playball.className} `}
+            style={{
+              textShadow: "  10px 8px 6px rgba(59, 3, 3, 0.3)",
+            }}
+          >
+            Femenina
+          </h1>
+          <h1
+            className={`text-[#1d4116] text-md max-sm:text-xs  max-sm:w-full font-extrabold  max-sm:text-center ${poppins.className}`}
+          >
             21 de Junio
           </h1>
         </div>

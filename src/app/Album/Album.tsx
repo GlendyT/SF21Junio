@@ -1,5 +1,5 @@
 "use client";
-import { photos } from "./Data/photos";
+import { photos } from "../../constants/photos";
 import { useLogic } from "@/hooks/useLogic";
 import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";

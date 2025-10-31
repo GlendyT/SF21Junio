@@ -1,7 +1,7 @@
 "use client";
-import { navLinks } from "@/constants";
 import { usePage } from "@/hooks/usePage";
 import Link from "next/link";
+import { navLinks } from "../constants";
 const Navbar = () => {
   const { isScrolled } = usePage();
 

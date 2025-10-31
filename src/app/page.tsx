@@ -1,25 +1,27 @@
 "use client";
+
+import { poppins } from "@/utils/Fonts";
+import Inicio from "./inicio/Inicio";
+import Patrocinadores from "./patrocinadores/Patrocinadores";
+import Nosotras from "./nosotras/Nosotras";
+import Album from "./album/Album";
+import Videos from "./album/Videos";
+import Experencia from "./(experencia)/Experiencia";
+import Participantes from "./participantes/Participantes";
+import Musicos from "./musicos/Musicos";
 import Footer from "@/utils/Footer";
-import Inicio from "./inicio/page";
-import Musicos from "./musicos/page";
-import Nosotras from "./nosotras/page";
-import Participantes from "./participantes/page";
-import Patrocinadores from "./patrocinadores/page";
-import Historia from "./Historia/page";
-import Album from "./Album/page";
-import Videos from "./Album/Videos";
-import Experencia from "./Experencia/page";
+import Historia from "./historia/page";
 
 export default function Home() {
   return (
-    <main>
+    <main className={` ${poppins.className} `}>
       <Inicio />
       <Patrocinadores />
       <Historia />
       <Nosotras />
       <Album />
       <Videos />
-      <Experencia/>
+      <Experencia />
       <Participantes />
       <Musicos />
       <Footer />

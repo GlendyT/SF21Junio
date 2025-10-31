@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Inicio from '../src/app/inicio/page';
+import Inicio from '@/app/inicio/Inicio';
 
 // Mock Next.js Image component
 jest.mock('next/image', () => {

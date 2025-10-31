@@ -4,13 +4,13 @@ import { poppins } from "@/utils/Fonts";
 import Inicio from "./inicio/Inicio";
 import Patrocinadores from "./patrocinadores/Patrocinadores";
 import Nosotras from "./nosotras/Nosotras";
-import Album from "./album/Album";
-import Videos from "./album/Videos";
 import Participantes from "./participantes/Participantes";
 import Musicos from "./musicos/Musicos";
 import Footer from "@/utils/Footer";
 import Experiencia from "./(experiencia)/Experiencia";
 import Historia from "./historia/Historia";
+import Album from "./views/Album";
+import Videos from "./views/Videos";
 
 export default function Home() {
   return (
@@ -19,8 +19,8 @@ export default function Home() {
       <Patrocinadores />
       <Historia/>
       <Nosotras />
-      <Album />
-      <Videos />
+      <Album/>
+      <Videos/>
       <Experiencia/>
       <Participantes />
       <Musicos />

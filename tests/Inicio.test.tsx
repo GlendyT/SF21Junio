@@ -55,7 +55,7 @@ describe('Inicio Component', () => {
   it('renders the hero titles', () => {
     render(<Inicio />);
     
-    expect(screen.getByText('Sociedad Femenina')).toBeInTheDocument();
+    expect(screen.getByText('SOCIEDAD')).toBeInTheDocument();
     expect(screen.getByText('21 de Junio')).toBeInTheDocument();
   });
 
@@ -98,11 +98,11 @@ describe('Inicio Component', () => {
   it('applies mobile responsive classes', () => {
     render(<Inicio />);
     
-    const societyTitle = screen.getByText('Sociedad Femenina');
+    const societyTitle = screen.getByText('SOCIEDAD');
     const dateTitle = screen.getByText('21 de Junio');
     
-    expect(societyTitle).toHaveClass('max-sm:text-2xl');
-    expect(dateTitle).toHaveClass('max-sm:text-6xl');
+    expect(societyTitle).toHaveClass('max-sm:text-7xl');
+    expect(dateTitle).toHaveClass('max-sm:text-xs');
   });
 
   it('renders without crashing', () => {
@@ -129,11 +129,11 @@ describe('Inicio Component', () => {
   it('uses correct text styling for titles', () => {
     render(<Inicio />);
     
-    const societyTitle = screen.getByText('Sociedad Femenina');
+    const societyTitle = screen.getByText('SOCIEDAD');
     const dateTitle = screen.getByText('21 de Junio');
     
-    expect(societyTitle).toHaveClass('text-5xl', 'font-semibold');
-    expect(dateTitle).toHaveClass('text-[#1d4116]', 'text-8xl', 'font-extrabold');
+    expect(societyTitle).toHaveClass('text-9xl');
+    expect(dateTitle).toHaveClass('text-[#1d4116]', 'text-md', 'font-extrabold');
   });
 
   it('applies correct layout classes to main container', () => {
@@ -161,7 +161,7 @@ describe('Inicio Component', () => {
     render(<Inicio />);
     
     const headings = screen.getAllByRole('heading');
-    expect(headings).toHaveLength(2);
+    expect(headings).toHaveLength(3);
     
     headings.forEach(heading => {
       expect(heading.tagName).toBe('H1');

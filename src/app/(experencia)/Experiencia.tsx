@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { events } from "./data/events";
 import GlowCard from "@/components/GlowCard";

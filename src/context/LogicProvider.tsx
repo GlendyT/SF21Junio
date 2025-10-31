@@ -1,5 +1,5 @@
 "use client";
-import { photos } from "@/app/Album/Data/photos";
+import { photos } from "@/app/album/Data/photos";
 import { AllProviderProps, LogicContextType } from "@/types/types";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { createContext, useState } from "react";

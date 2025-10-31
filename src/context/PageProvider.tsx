@@ -1,5 +1,5 @@
 "use client";
-import { videos } from "@/app/Album/Data/photos";
+import { videos } from "@/app/album/Data/photos";
 import { AllProviderProps, PageContextType } from "@/types/types";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createContext } from "react";

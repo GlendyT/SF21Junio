@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Experencia = () => {
+const Experiencia = () => {
   useGSAP(() => {
     gsap.utils.toArray(".timeline-card").forEach((card) => {
       gsap.from(card as Element, {
@@ -118,4 +118,4 @@ const Experencia = () => {
   );
 };
 
-export default Experencia;
+export default Experiencia;

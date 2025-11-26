@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { participants } from "./Data/participants";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { sociedadFemenina } from "@/utils/data/sf21junio";
 
 const Participantes = () => {
   useGSAP(() => {
@@ -26,6 +26,10 @@ const Participantes = () => {
       }
     );
   });
+
+  const participants = sociedadFemenina?.participants || [];
+
+
   return (
     <section
       id="participantes"

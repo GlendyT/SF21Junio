@@ -1,7 +1,6 @@
 "use client";
-import { videos } from "@/constants/photos";
 import { AllProviderProps, PageContextType } from "@/types/types";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createContext } from "react";
 
 const PageContext = createContext<PageContextType>(null!);
@@ -47,16 +46,6 @@ const PageProvider = ({ children }: AllProviderProps) => {
     name: string;
   } | null>(null);
 
-  // Videos en orden normal para el primer carrusel
-  const infiniteVideos1 = useMemo(() => {
-    return [...videos, ...videos, ...videos];
-  }, []);
-
-  // Videos en orden inverso para el segundo carrusel
-  const infiniteVideos2 = useMemo(() => {
-    const reversedVideos = [...videos].reverse();
-    return [...reversedVideos, ...reversedVideos, ...reversedVideos];
-  }, []);
 
   // Function to scroll the carousel
   const scroll = (direction: "left" | "right", carouselId: 1 | 2) => {
@@ -244,8 +233,6 @@ const PageProvider = ({ children }: AllProviderProps) => {
         activeVideo,
         setActiveVideo,
         scroll,
-        infiniteVideos1,
-        infiniteVideos2,
         handleVideoClick,
         modalOpen,
         closeModal,

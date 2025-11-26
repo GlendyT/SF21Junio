@@ -1,11 +1,11 @@
 "use client"
 import React from "react";
-import { events } from "./data/events";
 import GlowCard from "@/components/GlowCard";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { sociedadFemenina } from "@/utils/data/sf21junio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +53,9 @@ const Experiencia = () => {
       });
     });
   }, []);
+
+  const events = sociedadFemenina?.events || [];
+
   return (
     <section className="w-full md:mt-4 xl:px-0 px-5 md:px-10  mt-10">
       <div className=" w-full h-full md:px-20 px-5">

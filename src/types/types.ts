@@ -84,8 +84,6 @@ export type PageContextType = {
   activeVideo: string | null;
   setActiveVideo: React.Dispatch<React.SetStateAction<string | null>>;
   scroll: (direction: "left" | "right", carouselId: 1 | 2) => void;
-  infiniteVideos1: Videointerfaces[];
-  infiniteVideos2: Videointerfaces[];
   handleVideoClick: (
     videoId: string,
     videoData: { id: number; name: string }
@@ -113,9 +111,6 @@ export type AllProviderProps = {
 export type LogicContextType = {
   isMobile: boolean;
   isTablet: boolean;
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  activeContent: Photosinterfaces;
   getConsistentHeight: (photoId: number) => number;
   expanded: string | false;
   handleChange: (
@@ -128,4 +123,33 @@ export type BotonesProps = {
   className?: string;
   onClick?: () => void;
   icon?: ReactNode;
+};
+
+export type Sociedad21JunioProps = {
+  id: number;
+  location: string;
+  title: string;
+  dateLetters: string;
+  dateNumbers: string;
+  image: string;
+  story: string;
+  faqs: {
+    id: number;
+    title: string;
+    content: string;
+  }[];
+  albums: {
+    videos: Videointerfaces[];
+    fotos: Photosinterfaces[];
+  }[];
+  events: {
+    id: number;
+    location: string;
+    title: string;
+    date: string;
+    image: string;
+    story: string;
+  }[];
+  participants: participantsinterfaces[];
+  musicians: musiciansinterfaces[];
 };

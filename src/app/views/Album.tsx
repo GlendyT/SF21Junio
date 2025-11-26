@@ -1,5 +1,4 @@
 "use client";
-import { photos } from "../../constants/photos";
 import { useLogic } from "@/hooks/useLogic";
 import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
@@ -7,18 +6,17 @@ import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { sociedadFemenina } from "@/utils/data/sf21junio";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
-  const {
-    activeTab,
-    setActiveTab,
-    activeContent,
-    getConsistentHeight,
-    isMobile,
-    isTablet,
-  } = useLogic();
+  const { getConsistentHeight, isMobile, isTablet } = useLogic();
+  
+  const fotos = sociedadFemenina?.albums[0]?.fotos || [];
+  const [activeTab, setActiveTab] = useState(fotos[0]?.name || "");
+  const activeContent = fotos.find((foto) => foto.name === activeTab) || fotos[0];
 
   useGSAP(() => {
     gsap.fromTo(
@@ -40,6 +38,10 @@ const Album = () => {
     );
   }, [activeContent]);
 
+  if (!sociedadFemenina || fotos.length === 0) {
+    return <div>No se encontró información</div>;
+  }
+
   return (
     <section
       id="album"
@@ -48,17 +50,17 @@ const Album = () => {
       <div className="flex flex-row items-center justify-between w-full">
         <h1 className="font-extrabold text-2xl text-[#551f12]">Album</h1>
         <div className="hidden sm:flex flex-row">
-          {photos.map((photo) => (
-            <div key={photo.id}>
+          {fotos.map((foto) => (
+            <div key={foto.id}>
               <button
                 className={`px-4 py-2 font-semibold border-b-4 text-xs uppercase cursor-pointer ${
-                  activeTab === photo.name
+                  activeTab === foto.name
                     ? "border-[#1d4116] text-[#24511c] "
                     : "border-transparent text-[#0d9381]"
                 } hover:text-redE`}
-                onClick={() => setActiveTab(photo.name)}
+                onClick={() => setActiveTab(foto.name)}
               >
-                {photo.name}
+                {foto.name}
               </button>
             </div>
           ))}
@@ -70,9 +72,9 @@ const Album = () => {
             onChange={(e) => setActiveTab(e.target.value)}
             className="px-4 py-2  border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 uppercase text-xs font-semibold cursor-pointer"
           >
-            {photos.map((photo) => (
-              <option key={photo.id} value={photo.name} className=" ">
-                {photo.name}
+            {fotos.map((foto) => (
+              <option key={foto.id} value={foto.name} className=" ">
+                {foto.name}
               </option>
             ))}
           </select>

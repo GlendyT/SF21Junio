@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { musicians } from "./Data/musicians";
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import Link from "next/link";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { useLogic } from "@/hooks/useLogic";
+import { sociedadFemenina } from "@/utils/data/sf21junio";
 
 const Musicos = () => {
   useGSAP(() => {
@@ -44,6 +45,8 @@ const Musicos = () => {
       );
   });
   const { isMobile, isTablet } = useLogic();
+
+  const musicians = sociedadFemenina?.musicians || [];
 
   return (
     <section

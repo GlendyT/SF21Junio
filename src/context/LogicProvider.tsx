@@ -1,5 +1,4 @@
 "use client";
-import { photos } from "@/constants/photos";
 import { AllProviderProps, LogicContextType } from "@/types/types";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { createContext, useState } from "react";
@@ -9,10 +8,6 @@ const LogicContext = createContext<LogicContextType>(null!);
 const LogicProvider = ({ children }: AllProviderProps) => {
   const isTablet = useMediaQuery("(max-width: 1024px)");
   const isMobile = useMediaQuery("(max-width: 600px)");
-  const defaultTab = photos.find((tab) => tab.id === 1) || photos[0];
-  const [activeTab, setActiveTab] = useState(defaultTab.name);
-  const activeContent =
-    photos.find((tab) => tab.name === activeTab) || defaultTab;
   const getConsistentHeight = (photoId: number) => {
     const seed = photoId * 31; // Usar el ID como key
     const normalized = (seed % 100) / 100; // Normalizar entre 0-1
@@ -38,9 +33,6 @@ const LogicProvider = ({ children }: AllProviderProps) => {
       value={{
         isMobile,
         isTablet,
-        activeTab,
-        setActiveTab,
-        activeContent,
         getConsistentHeight,
         expanded, 
         handleChange,

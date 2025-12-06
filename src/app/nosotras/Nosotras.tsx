@@ -2,10 +2,10 @@
 import * as React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap, { SplitText } from "gsap/all";
-import { about } from "./Data/aboutus";
 import { useLogic } from "@/hooks/useLogic";
 import Image from "next/image";
 import Acordion from "@/components/Acordion";
+import { sociedadFemenina } from "@/utils/data/sf21junio";
 
 export default function Nosotras() {
   const { handleChange, expanded } = useLogic();
@@ -68,6 +68,11 @@ export default function Nosotras() {
       .to("#right-leaf", { y: 300 }, 0)
       .to("#left-leaf", { y: -200 }, 0);
   }, []);
+
+  if (!sociedadFemenina) {
+    return <div>No se encontró la sociedad</div>;
+  }
+ const about = sociedadFemenina.faqs
 
   return (
     <section
